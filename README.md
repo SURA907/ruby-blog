@@ -1,24 +1,8 @@
-# README
+# ruby blog
+> 使用ruby重写之前的[node-blog](https://github.com/SURA907/node-blog)</br>
+> 本次会尽可能复用之前的前端页面</br>
+> 原谅我取名字的品味
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# develop log
+> - ### 2019-01-07
+>> 把ejs改进erb里真的是有些酸爽 ≧ ﹏ ≦
