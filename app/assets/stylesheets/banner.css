@@ -20,6 +20,7 @@ body{
     width: 70%;
     margin: 0 auto;
     display: block;
+    user-select: none;
 }
 
 .banner-item a{
@@ -48,15 +49,15 @@ body{
 
 .login-status a{
     font-size: 17px;
-    background-color: #f4f4f4;
+    background-color: #bbffaa;
 }
 
 .login-status a:visited{
-    background-color: #f4f4f4;
+    background-color: #bbffaa;
 }
 
 .login-status a:link{
-    background-color: #f4f4f4;
+    background-color: #bbffaa;
 }
 
 .login-status a:active{
@@ -81,7 +82,8 @@ body{
     left: 55%;
     color: #d7deff;
     text-decoration: none;
-    transition: left 3s;
+    transition: left 3s ease-out;
+    user-select: none;
 }
 
 .title-default {
@@ -91,6 +93,7 @@ body{
 .home-img{
     width: 100%;
     display: inline-block;
+    user-select: none;
 }
 
 .article-items{

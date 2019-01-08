@@ -1,0 +1,22 @@
+<div class="banner">
+  <div class="logo">
+    <%= image_tag "logo.png" %>
+  </div>
+  <ul class="banner-item">
+    <a href="/"><li>博客首页</li></a>
+    <a href="/#article-content"><li>博客文章</li></a>
+    <a href="https://github.com/SURA907/node_blog"><li>GitHub</li></a>
+    <a href="/admin/admin_home"><li>管理站点</li></a>
+  </ul>
+  <% if @user_status.empty? %>
+    <div class="login-status"><%= link_to "点击", "/admin/login" %>登陆</div>
+  <% else %>
+    <div class="login-status">
+      <%= image_tag "user_avatar.png", class: "user-avatar" %>
+      <div>
+        <%= @user_status[:username] %>
+      </div>
+      <%= link_to "登出", "#", id: "btn-logout" %>
+    </div>
+  <% end %>
+</div>

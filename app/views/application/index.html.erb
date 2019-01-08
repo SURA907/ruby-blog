@@ -1,26 +1,30 @@
-<span class="title">
-  <h1>SURA's Blog</h1>
-</span>
-<%= image_tag "index.jpg", class: "home-img" %>
-<script type="text/javascript" charset="utf-8">
-  var title = document.getElementsByClassName("title")[0]
-    setTimeout(() => {
-        title.className = 'title title-default'
-    }, 500)
-</script>
-<!--<img class="home-img" src="img/index.jpg" alt="图床失效">-->
-<ul class="article-content" id="article-content">
-  <% @article_data.each do |article_data_item| %>
-  <li class="article-items">
-    <a href="/article?article_id=<%=article_data_item[:article_id]%>" class="article-title">
-      <h2><%= article_data_item[:article_title] %></h2>
-    </a>
-    <div class="article-status">
-      <span class="upload-time"><%= image_tag "upload-time.png" %><%= article_data_item[:upload_time] %></span>
-      <span class="author"><%= image_tag "author.png" %><%= article_data_item[:author]%></span>
-      <span class="theme"><%= image_tag "theme.png" %>无主题</span>
-    </div>
-    <div class="article-body"><%= article_data_item[:article_body] %></div>
-  </li>
-  <% end %>
-</ul>
+<%= render '/banner' %>
+<div class="content">
+  <span class="title">
+    <h1>SURA's Blog</h1>
+  </span>
+  <%= image_tag "index.jpg", class: "home-img" %>
+  <script type="text/javascript" charset="utf-8">
+    var title = document.getElementsByClassName("title")[0]
+      setTimeout(() => {
+          title.className = 'title title-default'
+      }, 500)
+  </script>
+  <!--<img class="home-img" src="img/index.jpg" alt="图床失效">-->
+  <ul class="article-content" id="article-content">
+    <% @article_data.each do |article_data_item| %>
+    <li class="article-items">
+      <a href="/article?article_id=<%=article_data_item[:article_id]%>" class="article-title">
+        <h2><%= article_data_item[:article_title] %></h2>
+      </a>
+      <div class="article-status">
+        <span class="upload-time"><%= image_tag "upload-time.png" %><%= article_data_item[:upload_time] %></span>
+        <span class="author"><%= image_tag "author.png" %><%= article_data_item[:author]%></span>
+        <span class="theme"><%= image_tag "theme.png" %>无主题</span>
+      </div>
+      <div class="article-body"><%= article_data_item[:article_body] %></div>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<div class="fix-float"></div>

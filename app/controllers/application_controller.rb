@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   def index
-    @user_status = {:username => "sura"}
+    @user_status = {}
     @article_data = [
       {:article_id => 11,
        :article_title => '测试标题',
