@@ -1,0 +1,32 @@
+<% provide(:title, "注册") %>
+<div class="login-title">
+  <a href="../../">
+    <h1>SURA</h1>
+  </a>
+</div>
+<div class="login-content">
+  <div class="top-btn">
+    <a href="#" id="btn-login">注册</a>
+  </div>
+  <%= form_tag '/users/signup' do %>
+    <%= render 'shared/display_error' %>
+    <div class="input-home">
+      <%= image_tag 'user-ico.png', class: 'user-ico' %>
+      <%#= f.text_field :username, id: "input-username", placeholder: "用户名" %>
+      <input type="text" name="users[username]" id="input-password" placeholder="用户名">
+
+      <%= image_tag 'lock-ico.png', class: 'lock-ico' %>
+      <%#= f.password_field : "password", id: "input-password", placeholder: "密码" %>
+      <input type="password" name="users[password]" id="input-password", placeholder="密码">
+
+      <%= image_tag 'lock-ico.png', class: 'lock-ico2' %>
+      <%#= f.password_field :"password_confirmation", id:"input-password", placeholder: "确认密码" %>
+      <input type="password" name="users[password_confirmation]", id="input-password", placeholder="确认密码">
+    </div>
+    <div class="bottom-btn">
+      <span>不想注册了？</span>
+      <a href="javascript:history.back();">返回</a>
+      <button id="btn-submit">提交</button>
+    </div>
+  <% end %>
+</div>
