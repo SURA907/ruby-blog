@@ -3,18 +3,18 @@
     <%= image_tag "logo.png" %>
   </div>
   <ul class="banner-item">
-    <a href="/app/assets/javascripts"><li>博客首页</li></a>
-    <a href="/app/assets/javascripts#article-content"><li>博客文章</li></a>
+    <a href="/"><li>博客首页</li></a>
+    <a href="/"><li>博客文章</li></a>
     <a href="https://github.com/SURA907/node_blog"><li>GitHub</li></a>
     <a href="/admin/admin_home"><li>管理站点</li></a>
   </ul>
-  <% if @user_status.empty? %>
+  <% if !signed_in? %>
     <div class="login-status"><%= link_to "登录", "/signin" %>&nbsp;|&nbsp;<%= link_to "注册", "/users/signup" %></div>
   <% else %>
     <div class="login-status">
       <div>
         <span>
-          hi,&nbsp;<%= @user_status[:username] %>
+          hi,&nbsp;<%= current_user["username"] %>
         </span>
       </div>
       <%= link_to "登出", "#", id: "btn-logout" %>

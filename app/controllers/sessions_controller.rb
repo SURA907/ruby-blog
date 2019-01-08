@@ -8,8 +8,8 @@ class SessionsController < ApplicationController
     user = User.find_by(username: user_param[:username])
     if user && user.authenticate(user_param[:password])
       # 成功登录，创建session
-      flash.now[:danger] = '成功'
-      render 'new'
+      sign_in user
+      redirect_to '/'
     else
       # 登陆失败
       flash.now[:danger] = '用户名和密码不匹配'

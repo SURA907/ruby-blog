@@ -17,4 +17,10 @@ Rails.application.routes.draw do
   # 注销登录
   delete '/signout' => 'sessions#destroy'
 
+  # 文章创建页面
+  get '/articles/new' => 'articles#new'
+  # 新建文章
+  post '/articles/new' => 'articles#create'
+  # 文章展示页面
+  get '/articles/:id' => 'articles#show'
 end

@@ -1,0 +1,36 @@
+<% provide(:title, '新建文章') %>
+<%= render 'shared/banner' %>
+<div class="content">
+  <div class="add-article-content">
+    <%= form_tag '/articles/new', :method => 'post' do %>
+      <% if @article && @article.errors.any? %>
+        <div id="error_explanation">
+          <h2>发生了 <%= pluralize(@article.errors.count, '') %> 个错误：</h2>
+          <ul>
+            <% @article.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <input type="text" id="article-title" name="article[title]" placeholder="请输入标题">
+      <textarea id="article-body" name="article[content]" placeholder="请输入文章内容（markdown）"></textarea>
+      <div class="submit-home">
+        <div class="theme">
+          <div>主题</div>
+          <div class="radio-items">测试中···</div>
+          <div class="radio-items">即将上线</div>
+        </div>
+        <button id="btn-submit">提交</button>
+      </div>
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+  var btn_submit = document.getElementById('btn-submit');
+  var input_content = document.getElementById('article-body');
+  btn_submit.onclick = function () {
+    input_content.value = encodeURIComponent(input_content.value.trim());
+    return true
+  }
+</script>

@@ -15,7 +15,7 @@
   <ul class="article-content" id="article-content">
     <% @article_data.each do |article_data_item| %>
     <li class="article-items">
-      <a href="/article?article_id=<%=article_data_item[:id]%>" class="article-title">
+      <a href="/articles/<%=article_data_item[:id]%>" class="article-title">
         <h2><%= article_data_item[:title] %></h2>
       </a>
       <div class="article-status">
@@ -23,7 +23,7 @@
         <span class="author"><%= image_tag "author.png" %><%= article_data_item[:author]%></span>
         <span class="theme"><%= image_tag "theme.png" %>无主题</span>
       </div>
-      <div class="article-body"><%= article_data_item[:content] %></div>
+<!--      <div class="article-body"><%#= article_data_item[:content] %></div>-->
     </li>
     <% end %>
   </ul>
