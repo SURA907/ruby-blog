@@ -16,4 +16,15 @@ module SessionsHelper
   def signed_in?
     !current_user.nil?
   end
+
+  # 确认用户是否为管理员
+  def is_admin?
+    current_user[:is_admin] == 'YES'
+  end
+
+  # 注销登录
+  def sign_out
+    session.delete(:user_id)
+    @current_user = nil
+  end
 end

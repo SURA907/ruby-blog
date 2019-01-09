@@ -1,0 +1,43 @@
+<% provide(:title, '管理') %>
+<%= render 'shared/banner' %>
+<div class="content">
+  <div class="btn-home">
+    <ul>
+      <li class="items-title">操作-admin</li>
+      <li class="admin-content">
+        <span>--add</span>
+        <a href="/articles/new">添加文章</a>
+      </li>
+      <hr>
+    </ul>
+  </div>
+
+  <div class="admin-items">
+    <ul>
+      <li class="items-title">文章管理-<%= current_user[:is_admin]=='YES'? 'admin(all)':'ordinary(only self)' %></li>
+      <% @article_list.each do |item|%>
+      <li class="admin-content">
+        <div class="article-title-home">
+          <span class="article-title"><%= item[:title] %></span>
+        </div>
+        <div class="article-message">
+          <%= image_tag 'author.png' %>
+          <span class="author"><%= item[:author] %></span>
+
+          <%= image_tag 'upload-time.png' %>
+          <span class="upload-time"><%= item[:created_at] %></span>
+        </div>
+        <div class="operating">
+          <%= form_tag "/articles/#{item[:id]}", method: 'delete' do %>
+            <input type="hidden" name="articles[article_id]" value="<%= item[:id] %>">
+            <button class="btn-operating-delete"><%= image_tag 'delete_ico.png', class: 'delete-ico' %>删除</button>
+            <a href="/articles/edit/<%= item[:id] %>" class="btn-operating-update" ><%= image_tag 'edit_ico.png' %>编辑</a>
+          <% end %>
+        </div>
+      </li>
+      <hr>
+      <% end %>
+    </ul>
+  </div>
+
+</div>

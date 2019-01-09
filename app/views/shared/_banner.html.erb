@@ -4,9 +4,9 @@
   </div>
   <ul class="banner-item">
     <a href="/"><li>博客首页</li></a>
-    <a href="/"><li>博客文章</li></a>
-    <a href="https://github.com/SURA907/node_blog"><li>GitHub</li></a>
-    <a href="/admin/admin_home"><li>管理站点</li></a>
+    <a href="/#article-content"><li>博客文章</li></a>
+    <a href="https://github.com/SURA907/ruby-blog"><li>GitHub</li></a>
+    <a href="/admin"><li>管理站点</li></a>
   </ul>
   <% if !signed_in? %>
     <div class="login-status"><%= link_to "登录", "/signin" %>&nbsp;|&nbsp;<%= link_to "注册", "/users/signup" %></div>
@@ -17,7 +17,7 @@
           hi,&nbsp;<%= current_user["username"] %>
         </span>
       </div>
-      <%= link_to "登出", "#", id: "btn-logout" %>
+      <%= link_to "登出", "/signout", id: "btn-logout" %>
     </div>
   <% end %>
 </div>

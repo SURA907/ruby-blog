@@ -1,5 +1,4 @@
 .content{
-    min-height: 900px;
     text-align: center;
 }
 
@@ -26,7 +25,11 @@
     line-height: 1.4em;
 }
 
-.comment-content{
+.content .show-article-content h2{
+    font-size: 36px;
+}
+
+.content .comment-content{
     display: inline-block;
     width: 92%;
     border-radius: 12px;
@@ -35,11 +38,14 @@
     padding: 24px 24px;
 }
 
-.content .show-article-content h2{
-    font-size: 36px;
+.comment-body {
+    width: 95%;
+    padding: 24px 12px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
 }
 
-.comment-items{
+.comment-body .comment-items{
     background-color: #e4e4e4;
     margin-top: 20px;
     text-align: left;

@@ -18,6 +18,8 @@ class SessionsController < ApplicationController
   end
   # 注销登录
   def destroy
+    sign_out
+    redirect_to '/'
   end
 
   private

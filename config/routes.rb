@@ -15,12 +15,30 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
 
   # 注销登录
-  delete '/signout' => 'sessions#destroy'
+  get '/signout' => 'sessions#destroy'
 
   # 文章创建页面
   get '/articles/new' => 'articles#new'
+
   # 新建文章
   post '/articles/new' => 'articles#create'
+
   # 文章展示页面
   get '/articles/:id' => 'articles#show'
+
+  # 文章编辑页面
+  get '/articles/edit/:id' => 'articles#edit'
+
+  # 更新文章
+  put '/articles/edit/:id' => 'articles#update'
+
+  # 删除文章
+  delete '/articles/:id' => 'articles#destroy'
+
+  # 增加评论
+  post '/comments' => 'comments#create'
+
+  # 展示管理页面
+  get '/admin' => 'admin#show'
+
 end

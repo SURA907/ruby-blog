@@ -1,8 +1,7 @@
-class Article < ApplicationRecord
+class Comment < ApplicationRecord
+  validates :article_id, :presence => true
   validates :user_id, :presence => true
-  validates :title, :presence => true
   validates :content, :presence => true
   validates :author, :presence => true
-  belongs_to :user
-  has_many :comments
+  belongs_to :article
 end
