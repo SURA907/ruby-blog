@@ -4,8 +4,6 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-# 自动化部署工具
-gem 'mina'
 
 # use bcrypt to crypt password
 gem 'bcrypt'
@@ -14,7 +12,7 @@ gem 'rails', '~> 5.1.6', '>= 5.1.6.1'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 # change 'mysql'
-gem 'mysql2', '>= 0.3.18', '< 0.6.0'
+gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
