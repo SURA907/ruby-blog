@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   def index
-    article_list = Article.all.order(:created_at => :desc)
-    @article_data = article_list
+    @article_data = Article.all.order(:created_at => :desc)
   end
 end
